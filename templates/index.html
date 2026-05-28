@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calidad del Aire</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,700;0,9..144,800;1,9..144,600&family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+</head>
+<body>
+
+  <!-- ========== NAVBAR ========== -->
+  <header class="navbar">
+    <div class="navbar__brand">
+      <div class="navbar__logo">🌬️</div>
+      <span class="navbar__title">Aire<span>Lab</span></span>
+    </div>
+    <nav>
+      <ul class="navbar__nav">
+        <li><a href="#que-es">¿Qué es?</a></li>
+        <li><a href="#contaminantes">Contaminantes</a></li>
+        <li><a href="#dispositivo-iot">Dispositivo IoT</a></li>
+        <li><a href="#recomendaciones">Recomendaciones</a></li>
+        <li><a href="#modelos">Modelos</a></li>
+        <li><a href="#dashboard">Dashboard</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ========== HERO ========== -->
+  <section class="hero">
+    <h1 class="hero__title">Sistema de analisis de datos<br/>Calidad de Aire</h1>
+    <p class="hero__subtitle">
+      Análisis de contaminantes atmosféricos, sus efectos en la salud y el medioambiente,
+      y herramientas de visualización en tiempo real.
+    </p>
+    <div class="hero__actions">
+      <a href="#dispositivo-iot" class="hero__cta hero__cta--primary">📡 Ver Dispositivo IoT →</a>
+      <a href="#dashboard" class="hero__cta hero__cta--secondary">📊 Ver Dashboard →</a>
+    </div>
+  </section>
+
+  <!-- ========== ¿QUÉ ES? ========== -->
+  <section class="section" id="que-es">
+    <div class="section__header">
+      <span class="section__label">Introducción</span>
+      <h2 class="section__title">¿Qué es la calidad del aire?</h2>
+      <p class="section__desc">
+        El Índice de Calidad del Aire (ICA) mide qué tan limpio o contaminado está el aire
+        que respiramos y los posibles efectos sobre la salud.
+      </p>
+    </div>
+
+    <div class="intro-grid">
+      <div class="intro-card">
+        <div class="intro-card__icon">🌍</div>
+        <h3 class="intro-card__title">Fuentes de contaminación</h3>
+        <p class="intro-card__text">
+          Los principales emisores incluyen el tráfico vehicular, la industria, la quema de combustibles
+          fósiles y procesos agrícolas. Estas actividades liberan gases y partículas nocivas a la atmósfera.
+        </p>
+      </div>
+      <div class="intro-card">
+        <div class="intro-card__icon">🫁</div>
+        <h3 class="intro-card__title">Impacto en la salud</h3>
+        <p class="intro-card__text">
+          La exposición prolongada a aire contaminado puede causar enfermedades respiratorias, cardiovasculares
+          y del sistema nervioso. Los grupos más vulnerables son niños, adultos mayores y personas con enfermedades previas.
+        </p>
+      </div>
+      <div class="intro-card">
+        <div class="intro-card__icon">🌱</div>
+        <h3 class="intro-card__title">Impacto ambiental</h3>
+        <p class="intro-card__text">
+          La contaminación del aire contribuye al cambio climático, la lluvia ácida y la degradación de ecosistemas.
+          Afecta la biodiversidad, los suelos y los cuerpos de agua de forma directa e indirecta.
+        </p>
+      </div>
+      <div class="intro-card">
+        <div class="intro-card__icon">📏</div>
+        <h3 class="intro-card__title">¿Cómo se mide?</h3>
+        <p class="intro-card__text">
+          Se utilizan estaciones de monitoreo con sensores que cuantifican la concentración de contaminantes. 
+          El ICA integra estos datos en una escala de 0 a 500 de fácil interpretación.
+        </p>
+      </div>
+      <div class="intro-card">
+        <div class="intro-card__icon">⚖️</div>
+        <h3 class="intro-card__title">Normatividad colombiana</h3>
+        <p class="intro-card__text">
+          Colombia regula la calidad del aire mediante la Resolución 2254 de 2017 del Ministerio de Ambiente,
+          que establece los niveles máximos permisibles de contaminantes y los protocolos de monitoreo.
+        </p>
+      </div>
+      <div class="intro-card">
+        <div class="intro-card__icon">📡</div>
+        <h3 class="intro-card__title">Redes de monitoreo</h3>
+        <p class="intro-card__text">
+          Las redes de monitoreo de calidad del aire (RMCA) recopilan datos continuos para alertar a la
+          ciudadanía y apoyar la toma de decisiones en política pública ambiental y de salud.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CONTAMINANTES ========== -->
+  <div id="contaminantes" style="background: var(--light-gray); padding: 4.5rem 2rem;">
+    <div class="section" style="padding:0; max-width:1200px; margin:0 auto;">
+
+      <div class="section__header">
+        <span class="section__label">Principales contaminantes</span>
+        <h2 class="section__title">Agentes monitoreados</h2>
+        <p class="section__desc">
+          Estos son los contaminantes primarios que se analizan en las estaciones de monitoreo
+          y tienen norma de calidad del aire en Colombia.
+        </p>
+      </div>
+
+      <div class="contam-grid">
+        <div class="contam-card" style="border-color:#d63031;">
+          <div class="contam-card__header">
+            <span class="contam-card__name">Dióxido de carbono</span>
+            <span class="contam-card__formula">CO₂</span>
+          </div>
+          <p class="contam-card__desc">
+           Gas presente de forma natural en el ambiente, pero en concentraciones altas puede afectar la calidad del aire y la salud de las personas.
+          </p>
+          <div class="contam-card__limit">
+            <div class="contam-card__limit-dot" style="background:#d63031;"></div>
+            <span style="color:var(--text-mid);">Límite anual (CO₂): <strong style="color:var(--text-dark);">1000ppm</strong></span>
+          </div>
+        </div>
+
+        <div class="contam-card" style="border-color:#e8722a;">
+          <div class="contam-card__header">
+            <span class="contam-card__name">Monóxido de carbono</span>
+            <span class="contam-card__formula">CO</span>
+          </div>
+          <p class="contam-card__desc">
+            Gas tóxico producido principalmente por combustiones incompletas, como humo de vehículos o combustibles.
+            La exposición a niveles elevados puede causar síntomas como dolor de cabeza, mareos y en casos graves, la muerte.
+          </p>
+          <div class="contam-card__limit">
+            <div class="contam-card__limit-dot" style="background:#e8722a;"></div>
+            <span style="color:var(--text-mid);">Límite anual (CO): <strong style="color:var(--text-dark);">9 ppm</strong></span>
+          </div>
+        </div>
+
+        <div class="contam-card" style="border-color:#2563a8;">
+          <div class="contam-card__header">
+            <span class="contam-card__name">Metano</span>
+            <span class="contam-card__formula">CH₄</span>
+          </div>
+          <p class="contam-card__desc">
+            Gas inflamable que puede generarse por descomposición de materia orgánica y actividades industriales.
+          </p>
+          <div class="contam-card__limit">
+            <div class="contam-card__limit-dot" style="background:#2563a8;"></div>
+            <span style="color:var(--text-mid);">Límite 24h (CH₄): <strong style="color:var(--text-dark);">50 ppm</strong></span>
+          </div>
+        </div>
+
+        <div class="contam-card" style="border-color:#2db37a;">
+          <div class="contam-card__header">
+            <span class="contam-card__name">Amoníaco</span>
+            <span class="contam-card__formula">NH₃</span>
+          </div>
+          <p class="contam-card__desc">
+            Gas con olor fuerte utilizado en productos químicos y fertilizantes, que en grandes cantidades puede ser perjudicial para la salud.
+          </p>
+          <div class="contam-card__limit">
+            <div class="contam-card__limit-dot" style="background:#2db37a;"></div>
+            <span style="color:var(--text-mid);">Límite 24h (NH₃): <strong style="color:var(--text-dark);">25 ppm</strong></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== DISPOSITIVO IOT ========== -->
+  <section class="section" id="dispositivo-iot">
+    <div class="section__header">
+      <span class="section__label">Infraestructura de medición</span>
+      <h2 class="section__title">Dispositivos IoT seleccionados</h2>
+      <p class="section__desc">
+        Especificaciones técnicas del hardware, sensores y funcionamiento del sistema de medición implementado.
+      </p>
+    </div>
+
+    <!-- Tarjeta principal del dispositivo -->
+    <div class="iot-hero-card">
+      <div class="iot-hero-card__badge">📡 Hardware Principal</div>
+      <div class="iot-hero-card__body">
+        <div class="iot-hero-card__info">
+          <h3 class="iot-hero-card__name">
+            <!-- EDITAR: Nombre del dispositivo IoT -->
+            Espressif Systems ESP32
+          </h3>
+          <p class="iot-hero-card__desc">
+            <!-- EDITAR: Descripción del dispositivo (fabricante, modelo, características generales) -->
+            El ESP32 es el microcontrolador principal del sistema y actúa como el cerebro del proyecto. 
+            Su función es recibir y procesar la información enviada por los sensores para posteriormente mostrar o transmitir los datos obtenidos. 
+            Gracias a su conectividad Wi-Fi y Bluetooth, permite desarrollar sistemas inteligentes de monitoreo en tiempo real.
+          </p>
+          <div class="iot-specs-grid">
+            <div class="iot-spec">
+              <span class="iot-spec__label">Microcontrolador</span>
+              <span class="iot-spec__value">
+                <!-- EDITAR -->
+                La capacidad de procesamiento y conectividad integrada permite desarrollar sistemas de monitoreo inalámbricos.
+              </span>
+            </div>
+            <div class="iot-spec">
+              <span class="iot-spec__label">Conectividad</span>
+              <span class="iot-spec__value">
+                <!-- EDITAR -->
+             Conectividad Wi-Fi y Bluetooth que permite la comunicación y transmisión segura de los datos obtenidos de los sensores.
+              </span>
+            </div>
+            <div class="iot-spec">
+              <span class="iot-spec__label">Alimentación</span>
+              <span class="iot-spec__value">
+                <!-- EDITAR -->
+                Batería de 5V porque proporciona la energía necesaria para el correcto funcionamiento del sistema.
+              </span>
+            </div>
+            <div class="iot-spec">
+              <span class="iot-spec__label">Frecuencia de muestreo</span>
+              <span class="iot-spec__value">
+                <!--  EDITAR -->
+                El sistema utiliza una conexión Wi-Fi de 2.4 GHz que permite la transmisión inalámbrica de los datos hacia la plataforma. Por otro lado, el sensor trabaja con dos mediciones por segundo para mantener un monitoreo constante.
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sensores utilizados -->
+    <div class="subsection-header">
+      <span class="subsection-label">Sensor utilizado</span>
+    </div>
+
+    <div class="sensor-grid">
+
+  <!-- Sensor 1 — duplicar este bloque para agregar más sensores -->
+  <div class="sensor-card">
+    <div class="sensor-card__top">
+      <div>
+        <div class="sensor-card__model">
+          Sensor MQ135
+        </div>
+        <div class="sensor-card__type">
+          Detecta la calidad del aire y la presencia de diferentes gases contaminantes como dióxido de carbono (CO₂), amoníaco, humo, alcohol, benceno y otros compuestos químicos.
+        </div>
+      </div> <!-- ← Este cierre faltaba -->
+
+      <div class="sensor-card__variables">
+        <span class="sensor-tag">CO2, CO, NA3, CH4</span>
+      </div>
+    </div> <!-- /sensor-card__top -->
+
+    <p class="sensor-card__desc">
+      El sensor mide los niveles de contaminación del ambiente y envía estos datos al ESP32 para su análisis y visualización.
+    </p>
+  </div>
+
+</div><!-- /sensor-grid -->
+
+    <!-- Variables capturadas -->
+    <div class="subsection-header" style="margin-top:3rem;">
+      <span class="subsection-label">📊 Variables capturadas por el sistema</span>
+    </div>
+
+    <div class="variables-table-wrapper">
+      <table class="variables-table">
+        <thead>
+          <tr>
+            <th>Variable</th>
+            <th>Unidad</th>
+            <th>Sensor </th>
+            <th>Rango </th>
+            <th>Descripción</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!--  EDITAR: Completar filas según las variables reales del proyecto -->
+          <tr>
+            <td><strong>CO₂</strong></td>
+            <td><code>ppm</code></td>
+            <td>MQ135</td>
+            <td>0 – 5000 ppm</td>
+            <td>Mide la concentración de dióxido de carbono en el aire.</td>
+          </tr>
+          <tr>
+            <td><strong>CO</strong></td>
+            <td><code>ppm</code></td>
+            <td>MQ135</td>
+            <td>0 – 1000 ppm</td>
+            <td>Detecta monóxido de carbono presente en el ambiente.</td>
+          </tr>
+          <tr>
+            <td><strong>CH₄</strong></td>
+            <td><code>ppm</code></td>
+            <td>MQ135</td>
+            <td>0 – 1000 ppm</td>
+            <td>Mide niveles aproximados de metano en el aire.</td>
+          </tr>
+          <tr>
+            <td><strong>NH₃</strong></td>
+            <td><code>ppm</code></td>
+            <td>MQ135</td>
+            <td>0 – 300 ppm</td>
+            <td>Detecta presencia de amoníaco en el entorno.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Funcionamiento del sistema -->
+    <div class="subsection-header" style="margin-top:3rem;">
+      <span class="subsection-label">⚙️ Funcionamiento del sistema de medición</span>
+    </div>
+
+    <div class="flow-steps">
+      <div class="flow-step">
+        <div class="flow-step__num">01</div>
+        <div class="flow-step__content">
+          <h4 class="flow-step__title">Captación de datos</h4>
+          <p class="flow-step__text">
+            <!--  EDITAR: Cómo los sensores captan las variables ambientales -->
+            El sensor MQ135 capta gases como CO₂, CO, CH₄ y NH₃ mediante lecturas analógicas desde el pin 34 del ESP32 cada 500 ms.
+          </p>
+        </div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-step__num">02</div>
+        <div class="flow-step__content">
+          <h4 class="flow-step__title">Procesamiento local</h4>
+          <p class="flow-step__text">
+            <!--  EDITAR: Qué hace el microcontrolador con los datos -->
+            El ESP32 convierte y procesa las señales del sensor calculando voltaje, resistencia y concentración de gases en PPM.
+          </p>
+        </div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-step__num">03</div>
+        <div class="flow-step__content">
+          <h4 class="flow-step__title">Transmisión</h4>
+          <p class="flow-step__text">
+            <!-- EDITAR: Protocolo de comunicación y destino de los datos -->
+            Los datos se transmiten por WiFi usando la plataforma Blynk y se envían a pines virtuales para monitoreo en tiempo real.
+          </p>
+        </div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-step__num">04</div>
+        <div class="flow-step__content">
+          <h4 class="flow-step__title">Almacenamiento</h4>
+          <p class="flow-step__text">
+            <!--  EDITAR: Dónde y cómo se almacenan los datos -->
+            Blynk almacena los datos en la nube organizados según cada variable medida.
+          </p>
+        </div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-step__num">05</div>
+        <div class="flow-step__content">
+          <h4 class="flow-step__title">Visualización</h4>
+          <p class="flow-step__text">
+            <!--  EDITAR: Cómo se presentan los datos al usuario final -->
+            La aplicación Blynk muestra gráficas y valores en tiempo real de la calidad del aire al usuario.
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ========== RECOMENDACIONES ========== -->
+  <section class="section" id="recomendaciones">
+    <div class="section__header">
+      <span class="section__label">Guía de protección</span>
+      <h2 class="section__title">Recomendaciones según el ICA</h2>
+      <p class="section__desc">
+        Acciones preventivas según el nivel de calidad del aire vigente en tu zona.
+      </p>
+    </div>
+
+    <div class="rec-grid">
+      <div class="rec-card">
+        <div class="rec-card__icon">🟢</div>
+        <span class="rec-card__level" style="background:var(--green-pale); color:#1a7a50;">Buena · 0–50</span>
+        <h4 class="rec-card__title">Actividad normal</h4>
+        <p class="rec-card__text">
+          La calidad del aire es satisfactoria. No se requieren precauciones especiales. Ideal para actividades
+          al aire libre y ejercicio.
+        </p>
+      </div>
+
+      <div class="rec-card">
+        <div class="rec-card__icon">🟡</div>
+        <span class="rec-card__level" style="background:var(--yellow-pale); color:#8a6000;">Moderada · 51–100</span>
+        <h4 class="rec-card__title">Considerar grupos sensibles</h4>
+        <p class="rec-card__text">
+          Personas muy sensibles pueden experimentar síntomas menores. Se recomienda reducir la
+          actividad física intensa prolongada en exteriores.
+        </p>
+      </div>
+
+      <div class="rec-card">
+        <div class="rec-card__icon">🟠</div>
+        <span class="rec-card__level" style="background:var(--orange-pale); color:#8a3800;">Dañina grupos · 101–150</span>
+        <h4 class="rec-card__title">Grupos vulnerables en casa</h4>
+        <p class="rec-card__text">
+          Niños, adultos mayores y personas con enfermedades pulmonares o cardíacas deben
+          limitar la actividad prolongada al aire libre.
+        </p>
+      </div>
+
+      <div class="rec-card">
+        <div class="rec-card__icon">🔴</div>
+        <span class="rec-card__level" style="background:var(--red-pale); color:#8a0000;">Dañina · 151–200</span>
+        <h4 class="rec-card__title">Reducir actividad exterior</h4>
+        <p class="rec-card__text">
+          Toda la población puede comenzar a sentir efectos. Evitar ejercicio al aire libre,
+          usar tapabocas de filtro y ventilar interiores con cuidado.
+        </p>
+      </div>
+
+      <div class="rec-card">
+        <div class="rec-card__icon">🟣</div>
+        <span class="rec-card__level" style="background:var(--purple-pale); color:#5e1a7a;">Muy dañina · 201–300</span>
+        <h4 class="rec-card__title">Permanecer en interiores</h4>
+        <p class="rec-card__text">
+          Alerta sanitaria. Se recomienda no salir sin protección respiratoria adecuada.
+          Mantener puertas y ventanas cerradas.
+        </p>
+      </div>
+
+      <div class="rec-card">
+        <div class="rec-card__icon">🟤</div>
+        <span class="rec-card__level" style="background:var(--maroon-pale); color:var(--maroon);">Peligrosa · 301+</span>
+        <h4 class="rec-card__title">Emergencia ambiental</h4>
+        <p class="rec-card__text">
+          Condiciones de emergencia. Toda la población corre riesgo. Seguir alertas de las autoridades
+          locales y evitar cualquier exposición al exterior.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== MODELOS DE DATOS ========== -->
+  <div id="modelos" style="background: var(--light-gray); padding: 4.5rem 2rem;">
+    <div class="section" style="padding:0; max-width:1200px; margin:0 auto;">
+
+      <div class="section__header">
+        <span class="section__label">Arquitectura de datos</span>
+        <h2 class="section__title">Modelos de datos</h2>
+        <p class="section__desc">
+          Estructura multidimensional que soporta el almacenamiento y análisis
+          de los datos capturados por el sistema IoT.
+        </p>
+      </div>
+
+      <!-- Modelo Multidimensional -->
+      <div class="model-block" style="margin-top:2.5rem;">
+        <div class="model-block__header">
+          <div class="model-block__icon">🧊</div>
+          <div>
+            <h3 class="model-block__title">Modelo Multidimensional</h3>
+            <p class="model-block__subtitle">Esquema estrella para análisis en Power BI</p>
+          </div>
+        </div>
+
+        <div class="model-placeholder">
+  <img 
+    src="{{ url_for('static', filename='img/BD_Multidimensional.png') }}" 
+    alt="Modelo Multidimensional" 
+    style="width:100%; border-radius:12px;"
+  />
+</div>
+
+<!-- Chips opcionales debajo de la imagen -->
+<div class="model-placeholder__tables" style="margin-top: 1rem;">
+  <div class="model-table-chip model-table-chip--fact">⭐ FACT_Medidas</div>
+  <div class="model-table-chip model-table-chip--dim">🔷 DIM_Sensor</div>
+  <div class="model-table-chip model-table-chip--dim">🔷 DIM_ubicacion</div>
+  <div class="model-table-chip model-table-chip--dim">🔷 DIM_tipo_Medicion</div>
+  <div class="model-table-chip model-table-chip--dim">🔷 DIM_tiempo</div>
+</div>
+
+        <div class="model-desc-box">
+          <h4 class="model-desc-box__title">Descripción del modelo multidimensional</h4>
+          <p class="model-desc-box__text">
+            <!-- EDITAR: Describir la tabla de hechos, métricas y dimensiones -->
+            El modelo multidimensional tiene como tabla principal FACT_Medidas, donde se almacenan los valores medidos de calidad del aire. 
+            Esta se relaciona con las dimensiones de tiempo, ubicación, sensor y tipo de medición, permitiendo analizar los datos desde diferentes perspectivas. 
+            Gracias a esto, Power BI genera dashboards interactivos para visualizar y monitorear la calidad del aire.
+          </p>
+        </div>
+
+        <!-- Coherencia del sistema -->
+        <div class="coherence-banner">
+          <div class="coherence-banner__icon">🔗</div>
+          <div>
+            <h4 class="coherence-banner__title">Coherencia del sistema</h4>
+            <p class="coherence-banner__text">
+              <!-- EDITAR: Explicar la trazabilidad entre dispositivo → sensores → modelos → dashboard -->
+              El sistema integra un ESP32 y el sensor MQ135 para capturar datos de calidad del aire y enviarlos en tiempo real a Blynk mediante WiFi.
+              La información se almacena en un modelo multidimensional tipo estrella, donde la tabla FACT_Medidas se relaciona con dimensiones de tiempo,
+              sensor, ubicación y tipo de medición. Esto permite generar gráficas y visualizaciones dinámicas en el dashboard para analizar la calidad del aire.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== POWER BI DASHBOARD ========== -->
+  <div id="dashboard" style="background: linear-gradient(180deg, var(--off-white) 0%, white 100%); padding: 4.5rem 2rem;">
+    <div style="max-width:1200px; margin:0 auto;">
+
+      <div class="section__header">
+        <span class="section__label">Análisis de datos</span>
+        <h2 class="section__title">Dashboard interactivo</h2>
+        <p class="section__desc">
+          Visualización de datos de calidad del aire en tiempo real.
+        </p>
+      </div>
+
+      <div class="powerbi-wrapper">
+        <!-- Barra de título estilo navegador -->
+        <div class="powerbi-topbar">
+          <div class="powerbi-topbar__dot" style="background:#ff5f57;"></div>
+          <div class="powerbi-topbar__dot" style="background:#ffbd2e;"></div>
+          <div class="powerbi-topbar__dot" style="background:#28c840;"></div>
+          <span class="powerbi-topbar__label">
+            📊 Power BI Reporte — Calidad del Aire
+          </span>
+        </div>
+
+        <!-- Contenedor responsivo 16:9 -->
+        <div class="powerbi-frame-container">
+          <iframe
+            src=https://app.powerbi.com/groups/me/reports/48153b7d-2fd0-43c3-81cf-beffdfc88898/b37854ab907bc26010d5?experience=power-bi>
+          </iframe>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <p>
+      Proyecto de investigación académica — Universidad &middot;
+      Datos de referencia: <a href="https://www.minambiente.gov.co" target="_blank" rel="noopener">MinAmbiente Colombia</a> ·
+      Resolución 2254 de 2017
+    </p>
+  </footer>
+
+  <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
